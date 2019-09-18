@@ -48,4 +48,9 @@ Nikita Kucherov
 Sidney Crosby
 ```
 
-Punctuation and capitalization shouldn't matter.
+Punctuation and capitalization shouldn't matter. To reset your current rankins
+and run with a file `players.txt`:
+
+```bash
+$ pipenv run python yahoo.py --reset players.txt
+```

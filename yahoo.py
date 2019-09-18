@@ -112,7 +112,7 @@ def init_args(argv=None):
     p.add_argument('rankings', type=argparse.FileType('r'), metavar='<path>',
                    help='Path to rankings file')
     p.add_argument('-s', '--save-every', type=int, default=100, metavar='<N>',
-                   help='Save after every N players')
+                   help='Save after every N players (default: 100)')
     p.add_argument('-r', '--reset', action='store_true', help='Reset draft order')
 
     return p.parse_args(argv)
