@@ -180,13 +180,14 @@ def read_added_players_file():
         return set()
 
     with open(ADDED_PLAYERS_FILE) as f:
-        return set(f.readlines())
+        return set(line.strip() for line in f.readlines())
 
 
 def add_players(args, driver, rankings):
     LOG.info('Filtering out already added players')
     read_added_players_file()
     existing = set(get_added_players(driver)).union(read_added_players_file())
+
     to_add = [player for player in rankings if player not in existing]
     grouped = itertools.groupby(enumerate(to_add), lambda i: i[0] // args.save_every)
 
